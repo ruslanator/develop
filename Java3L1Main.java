@@ -2,7 +2,7 @@ package Java3L1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import java.util.List;
 
 
 public class Java3L1Main {
@@ -17,9 +17,9 @@ public class Java3L1Main {
         // 2. Написать метод, который преобразует массив в ArrayList
         System.out.println("Task two");
         Integer[] intArr = {1, 2, 3, 5};
-        System.out.println(Arrays.toString(intArr) + " " + intArr.getClass());
-        arrToArrayList(intArr);
-        System.out.println(Arrays.toString(intArr) + " " + intArr.getClass());
+        System.out.println(Arrays.toString(intArr));
+        List<Integer> list = arrToArrayList(intArr);
+        System.out.println(list);
     }
     private static <E>  void swapArrayElements(E[] arr, int firstIndex, int secondIndex){
         E buffer = arr[firstIndex];
@@ -27,7 +27,6 @@ public class Java3L1Main {
         arr[secondIndex] = buffer;
     }
     private static <T> ArrayList arrToArrayList(T[] arr) {
-        ArrayList<T> list = new ArrayList<T>(Arrays.asList(arr));
-        return list;
+        return new ArrayList<T>(Arrays.asList(arr));
     }
 }
